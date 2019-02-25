@@ -1,0 +1,51 @@
+
+package threadencapsulation;
+
+
+public class ThreadEncapsulation {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+           
+        Thread t = new Thread();
+        Test test = new Test();
+      
+        System.out.println(test.getValue());
+    }
+
+}
+package threadencapsulation;
+
+
+public class Test {
+
+    private int value;
+
+    public int getValue() {
+
+        return value;
+
+    }
+
+    public void setValue(int newValue) {
+
+        value = newValue;
+
+    }
+}
+package threadencapsulation;
+
+public class Thread {
+
+    public class Exchange extends Test implements Runnable {
+
+        public void run() {
+
+            setValue(4);
+
+        }
+
+    }
+}
